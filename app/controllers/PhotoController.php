@@ -9,7 +9,9 @@ class PhotoController extends \BaseController {
 	 */
 	public function index()
 	{
-		return "List all the available photos";
+		$photos = Photo::all();
+
+		return View::make('photos.index', compact('photos'));
 	}
 
 
