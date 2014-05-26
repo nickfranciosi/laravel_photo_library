@@ -22,7 +22,7 @@ class PhotoController extends \BaseController {
 	 */
 	public function create()
 	{
-		return "show a form that will allow a user to add a new photo";
+		return View::make('photos.create');
 	}
 
 
@@ -33,7 +33,7 @@ class PhotoController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		dd(Input::file('file'));
 	}
 
 
