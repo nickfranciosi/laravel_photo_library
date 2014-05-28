@@ -1,6 +1,16 @@
 <?php
 
+
+use Acme\Services\Validation\PhotoValidator as Validator;
+
 class PhotoController extends \BaseController {
+
+	protected $validator;
+
+	public function __construct(Validator $validator)
+	{
+		$this->validator = $validator;
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -33,8 +43,17 @@ class PhotoController extends \BaseController {
 	 */
 	public function store()
 	{
-		dd(Input::file('file'));
-		exit();
+		$input = Input::all();
+
+
+		if(!$this->validator->validate($input)){
+			return Redirect::back()->withErrors($this->validator->getErrors())->withInput();
+		}
+
+		return Redirect::home();
+
+	
+		
 	}
 
 

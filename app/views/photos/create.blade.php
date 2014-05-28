@@ -10,18 +10,20 @@
         <div class="form-group">
         {{ Form::label('title', 'Title: ') }}
         {{ Form::text('title') }}
+        {{ $errors->first('title')}}
         </div>
         <div class="form-group">
-        {{ Form::label('artist', 'Artist: ') }}
-        {{ Form::text('artist') }}
+        {{ Form::label('artist_id', 'Artist: ') }}
+        {{ Form::text('artist_id') }}
+        {{ $errors->first('artist_id')}}
         </div>
-          <div class="form-group">
+       <!--    <div class="form-group">
         {{ Form::label('file', 'Photo: ') }}
         {{ Form::file('file') }}
-        </div>
+        </div> -->
 
          <div class="form-group">
-        {{ Form::submit('Finish') }}
+        {{ Form::submit('Upload') }}
         </div>
 
     {{ Form::close() }}
