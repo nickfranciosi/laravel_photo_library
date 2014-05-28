@@ -34,6 +34,7 @@ class PhotoController extends \BaseController {
 	public function store()
 	{
 		dd(Input::file('file'));
+		exit();
 	}
 
 
